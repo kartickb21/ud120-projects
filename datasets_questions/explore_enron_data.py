@@ -46,8 +46,10 @@ salary = pd.DataFrame(enron_pd.loc[:,'salary'])
 count = salary['salary'].value_counts()
 salary['salary'] = pd.to_numeric(salary['salary'], errors='coerce')
 salary.dropna(inplace=True)
-salary['salary'].contains('NaN')
+#salary['salary'].contains('NaN')
 
 emails = pd.DataFrame(enron_pd.loc[:,'email_address'])
 counte = emails['email_address'].value_counts()
 
+total_payment = pd.DataFrame(enron_pd.loc[:,'total_payments'])
+counte = total_payment['total_payments'].value_counts()
