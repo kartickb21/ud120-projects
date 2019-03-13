@@ -52,4 +52,11 @@ emails = pd.DataFrame(enron_pd.loc[:,'email_address'])
 counte = emails['email_address'].value_counts()
 
 total_payment = pd.DataFrame(enron_pd.loc[:,'total_payments'])
-counte = total_payment['total_payments'].value_counts()
+countp = total_payment['total_payments'].value_counts()
+total_payment['total_payment'] = pd.to_numeric(total_payment[''], errors='coerce')
+salary.dropna(inplace=True)
+
+totalnanpay = enron_pd[enron_pd['total_payments'] == 'NaN']
+totalpay_poi = totalnanpay[totalnanpay['poi']=='1'] 
+
+print(len(enron_pd[enron_pd['poi'] == True]))
